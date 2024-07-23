@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.demo.models.Employee;
+import com.example.demo.entities.Employee;
 import com.example.demo.repositories.EmployeeRepository;
 
 import java.text.DateFormat;
