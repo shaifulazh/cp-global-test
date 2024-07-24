@@ -1,14 +1,13 @@
 package com.example.demo.entities;
-import java.util.Date;
+import java.time.LocalDate;
 
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 // • Id
 // • Employee id
@@ -26,17 +25,15 @@ public class Employee {
     private String employeeID;
     private String employeeName;
     private String department;
-    private Date dateOfBirth;
+    
+    @JsonFormat(pattern="dd-MM-yyyy")
+    private LocalDate dateOfBirth;
     private String email;
     private String phoneNumber;
 
-    public Employee() {
-        super();
-    }
+    public Employee() {}
 
-    public Employee(Long id, String employeeID, String employeeName, String department , Date dateOfBirth, String email, String phoneNumber){
-        super();
-        this.id = id;
+    public Employee(String employeeID, String employeeName, String department , LocalDate dateOfBirth, String email, String phoneNumber){
         this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.department = department;
@@ -45,15 +42,17 @@ public class Employee {
         this.phoneNumber = phoneNumber;
 
     }
+    public Long getID() {
+      return this.id;
+    }
 
     public String getEmployeeID() {
         return this.employeeID;
     }
 
-    public void setEmployeeID(String employerID){
-        this.employeeID = employerID;
+    public void setEmployeeID(String value){
+        this.employeeID = value;
     }
-
 
     public String getEmployeeName() {
       return this.employeeName;
@@ -69,10 +68,10 @@ public class Employee {
       this.department = value;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
       return this.dateOfBirth;
     }
-    public void setDateOfBirth(Date value) {
+    public void setDateOfBirth(LocalDate value) {
       this.dateOfBirth = value;
     }
 
