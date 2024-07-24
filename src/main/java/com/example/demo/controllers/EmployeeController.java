@@ -58,7 +58,7 @@ public class EmployeeController {
         
     }
 
-    //create employee using json{
+    // create employee using json{
     // 	"employeeID" : "00001",
     // 	"employeeName" : "myname",
     // 	"department" : "IT",
