@@ -112,7 +112,7 @@ public class EmployeeController {
         Optional<Employee> employeeData = employeeRepository.findById(id);
 
         if (!employeeData.isPresent()){
-            return new ResponseEntity<>("ID not found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("ID not found", HttpStatus.BAD_REQUEST);
         }
         try {
             employeeRepository.deleteById(employeeData.get().getID());
