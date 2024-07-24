@@ -1,10 +1,10 @@
 Demo Spring Boot for JAVA programming using JAVA SRPING with HIBERNATE ORM and H2 in-memory DB
 
 
-Requirment to run
+Requirement to run
 
-maven version 3.9.1
-java 22
+* maven version 3.9.1
+* java 22
 
 
 To run spring boot
